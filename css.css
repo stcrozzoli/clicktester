@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* INICIO */
+.divInicio{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 49, 116);
+    transition: 0.3s;
+}
+
+.divLogo{
+    width: 600px;
+    height: 300px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.divLogo p{
+    font-size: 3rem;
+    font-family: 'Silkscreen', cursive;
+    color:white;
+}
+
+.divLogo img{
+    position: absolute;
+    top: 200px;
+    left: 170px
+}
+
+
+
+/* BOTONES INICIO */
+
+.buttonJugar, .buttonOpciones{
+    width: 400px;
+    height: 150px;
+    background-color: rgb(131, 56, 236);
+    margin-top: 30px;
+    border:5px solid rgb(255, 105, 35);
+    font-size: 3rem;
+    font-family: 'Silkscreen', cursive;
+    color: white;
+    box-shadow: inset 0 0 0 0 rgb(255, 190, 11);
+    transition:0.3s
+}
+
+.buttonJugar:hover, .buttonOpciones:hover{
+    box-shadow: inset 400px 0px 0px 0px rgb(255, 190, 11);
+    color: black;
+}
+
+.divJugar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+/* OPCIONES */
+.divOpciones{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(255, 190, 11);
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    inset:0;
+}
+
+.divMusica{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 350px;
+    height: 125px;
+    background-color: rgb(58, 134, 255);
+    margin-top: 30px;
+    border:5px solid rgb(255, 105, 35);
+    font-size: 2rem;
+    font-family: 'Silkscreen', cursive;
+    color: white;
+}
+
+.divDarkMode{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+    height: 125px;
+    background-color: rgb(58, 134, 255);
+    margin-top: 30px;
+    border:5px solid rgb(255, 105, 35);
+    font-size: 2rem;
+    font-family: 'Silkscreen', cursive;
+    color: white;
+    }
+    
+/* BOTONES OPCIONES */
+.buttonMusica{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.buttonDarkMode{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.buttonOpcionesAtras{
+    width: 300px;
+    height: 120px;
+    background-color: rgb(131, 56, 236);
+    margin-top: 30px;
+    border:5px solid rgb(255, 105, 35);
+    font-size: 3rem;
+    font-family: 'Silkscreen', cursive;
+    color: white;
+    box-shadow: inset 0 0 0 0 rgb(58, 134, 255);
+    transition:0.3s
+}
+
+.buttonOpcionesAtras:hover{
+    box-shadow: inset 300px 0 0 0 rgb(58, 134, 255);
+    color:black;
+}
+
+/* JUEGO */
+.divJuego{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    padding: 50px;
+    background-color: rgb(58, 134, 255);
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s
+}
+
+.divClickAqui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    width: 650px;
+    height: 350px;
+    border: 5px solid black;
+    font-family: 'Silkscreen', cursive;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.divStopClicks{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.253);
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    inset:0;
+    transition: 0.3s
+}
+
+.divStopClicksModal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 500px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px black;
+    transition: 0.3s;
+    position: relative;
+}
+
+
+/* BOTONES JUEGO */
+.buttonJuegoInicio{
+    width: 300px;
+    height: 120px;
+    background-color: rgb(131, 56, 236);
+    border:5px solid rgb(255, 105, 35);
+    font-size: 3rem;
+    font-family: 'Silkscreen', cursive;
+    color: white;
+    box-shadow: inset 0 0 0 0 rgb(255, 190, 11);
+    transition:0.3s
+}
+
+.buttonJuegoInicio:hover{
+    box-shadow: inset 300px 0 0 0 rgb(255, 190, 11);
+    color:black;
+}
+
+.buttonJuegoInicioP{
+    color:red;
+}
+
+#cruz{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: ease-in 0.3s;
+}
+
+#cruz:hover{
+    color: red;
+}
+
+.time{
+    color:white;
+    margin-bottom: 30px;
+}
+
+.divInicio--active, .divOpciones--active, .divJuego--active, .divStopClicks--active{
+    opacity: 1;
+    pointer-events: unset;
+    transition: 0.3s;
+}
+
