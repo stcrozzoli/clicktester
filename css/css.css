@@ -27,22 +27,18 @@
     position: relative;
 }
 
-.divLogo p{
+.pLogo{
     font-size: 3rem;
     font-family: 'Silkscreen', cursive;
-    color:white;
+    color:rgb(0, 0, 0);
 }
 
-.divLogo img{
+.logo{
     position: absolute;
     top: 200px;
-    left: 170px
 }
 
-
-
 /* BOTONES INICIO */
-
 .buttonJugar, .buttonOpciones{
     width: 400px;
     height: 150px;
@@ -112,20 +108,6 @@
     }
     
 /* BOTONES OPCIONES */
-.buttonMusica{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: white;
-}
-
-.buttonDarkMode{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: white;
-}
-
 .buttonOpcionesAtras{
     width: 300px;
     height: 120px;
@@ -194,15 +176,17 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 40%;
-    height: 500px;
+    width: 50%;
+    height: 550px;
     background-color: whitesmoke;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 0px black;
     transition: 0.3s;
     position: relative;
+    font-family: 'Silkscreen', cursive;
+    font-size: 1rem;
+    text-align: center;
 }
-
 
 /* BOTONES JUEGO */
 .buttonJuegoInicio{
@@ -242,6 +226,8 @@
 .time{
     color:white;
     margin-bottom: 30px;
+    font-family: 'Silkscreen', cursive;
+    font-size: 3rem;
 }
 
 .divInicio--active, .divOpciones--active, .divJuego--active, .divStopClicks--active{
@@ -250,3 +236,137 @@
     transition: 0.3s;
 }
 
+.musicButton, .darkModeButton{
+    width: 100px;
+    border: 3px solid black;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 30px;
+    background-color: rgb(139, 139, 139);
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.musicButton--active, .darkModeButton--active{
+    transition: 0.3s;
+    background-color: rgb(25, 216, 25);
+}
+
+.musicButtonInside, .darkModeButtonInside{
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.musicButtonInside--active{
+    transform: translateX(100%);
+    animation: right 0.2s ease-in-out;
+}
+
+.musicButtonInside--active2{
+    transform: translateX(0%);
+    animation: left 0.2s ease-in-out;
+}
+
+@keyframes right {
+    0%{transform: translateX(0%);}
+    100%{transform: translateX(100%);}
+}
+
+@keyframes left {
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(0%);}
+}
+
+
+@media screen and (min-width:1px) and (max-width:767px){
+    .divLogo{
+        width: 550px;
+        height: 275px;
+    }
+    
+    .pLogo{
+        font-size: 2.5rem;
+    }
+    
+    .logo{
+        top: 170px;
+    }
+    
+    .buttonJugar, .buttonOpciones{
+        width: 300px;
+        height: 125px;
+        margin-top: 40px;
+        font-size: 2.5rem;
+    }
+        
+    .buttonOpcionesAtras{
+        width: 250px;
+        margin-top: 30px;
+        font-size: 2.5rem;
+    }
+    
+    .divClickAqui{
+        font-size: 2.5rem;
+        width: 520px;
+        height: 320px;
+    }
+    
+    .divStopClicksModal{
+        width: 90%;
+        height: 520px;
+    }
+    
+    .buttonJuegoInicio{
+        width: 250px;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+    
+    
+    #cruz{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.divInicio--dm{
+    background-color: black;
+}
+
+.divLogo--dm{
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.pLogo--dm{
+    color: white;
+}
+
+.buttonJugar--dm, .buttonOpciones--dm{
+    background-color: rgb(0, 0, 0);
+}
+
+.divOpciones--dm{
+    background: rgb(0, 0, 0) ;
+}
+
+.divJuego--dm{
+    background-color: rgb(0, 0, 0);
+}
+
+.divClickAqui--dm{
+    border: 5px solid rgb(255, 255, 255);
+    color: white;
+}
+
+.divStopClicks--dm{
+    background: rgba(0, 0, 0, 0.253);
+}
+
+.divStopClicksModal--dm{
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
