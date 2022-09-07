@@ -84,6 +84,7 @@ const darkModeButtonInside = document.querySelector('.darkModeButtonInside')
 const musicButton = document.querySelector('.musicButton')
 const darkModeButton = document.querySelector('.darkModeButton')
 const audio = document.querySelector('#audio')
+audio.innerHTML=`<audio src="./sound/soundtrack.mp3" autoplay loop></audio>`
 
 // darkmode
 const dm0 = document.querySelector('.divInicio')
