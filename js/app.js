@@ -18,7 +18,7 @@ const h2res2 = document.querySelector('.h2res2')
 const imgres = document.querySelector('#imgres')
 const final = document.querySelector('.final')
 const audio = document.querySelector('#audio')
-audio.innerHTML=`<audio src="./sound/soundtrack.mp3" autoplay loop></audio>`
+
 let images = [
     "./imgs/caracollight.png",
     "./imgs/rabbitlight.png", 
