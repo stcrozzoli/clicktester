@@ -19,6 +19,7 @@ const imgres = document.querySelector('#imgres')
 const final = document.querySelector('.final')
 const audio = document.querySelector('#audio')
 
+
 let images = [
     "./imgs/caracollight.png",
     "./imgs/rabbitlight.png", 
@@ -30,13 +31,21 @@ let images = [
 tiempo = 0
 totalClicks = 0
 boolean = true
-
+let interval = 0
 buttonJugar.onclick = () => {
     divJuego.classList.add('divJuego--active')
 }
 
 buttonJuegoInicio.onclick = () => {
     divJuego.classList.remove('divJuego--active')
+    boolean = true
+    clearInterval(interval)
+    totalClicks = 0
+    tiempo = 0
+    time.innerHTML=`
+    <p>Tiempo: ${tiempo} </p>
+    `
+    divClickAqui.innerHTML= `<p>CLICKEAME!</p>`
 }
 
 buttonOpciones.onclick = () => {
@@ -49,10 +58,9 @@ buttonOpcionesAtras.onclick = () => {
 
 divClickAqui.onclick = () => {
     totalClicks++
-    console.log(totalClicks)
     divClickAqui.innerHTML= `${totalClicks}`
     if (boolean == true){
-        const interval = setInterval(()=>{
+        interval = setInterval(()=>{
             tiempo++
             time.innerHTML=`
             <p>Tiempo: ${tiempo}</p>
@@ -102,7 +110,7 @@ cruz.onclick = () => {
     time.innerHTML=`
     <p>Tiempo: ${tiempo} </p>
     `
-    divClickAqui.innerHTML= `${totalClicks}`
+    divClickAqui.innerHTML= `<p>CLICKEAME!</p>`
 }
 
 const musicButtonInside = document.querySelector('.musicButtonInside')
@@ -183,9 +191,9 @@ darkModeButtonInside.onclick=()=>{
             "./imgs/tigerdark.png", 
             "./imgs/cheetahdark.png"
         ]
-
     }
 }
+
 
 
 
