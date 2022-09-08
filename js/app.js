@@ -1,4 +1,3 @@
-// DIVS
 const divInicio = document.querySelector('.divInicio')
 const divOpciones = document.querySelector('.divOpciones')
 const divJuego = document.querySelector('.divJuego')
@@ -7,8 +6,6 @@ const divClickAquiContando = document.querySelector('.divClickAquiContando')
 const divJuego2 = document.querySelector('.divJuego2')
 const divcontainerClicks = document.querySelector('.containerClicks')
 const divStopClicks = document.querySelector('.divStopClicks')
-
-// BOTONES
 const buttonJugar = document.querySelector('.buttonJugar')
 const buttonOpciones = document.querySelector('.buttonOpciones')
 const buttonOpcionesAtras = document.querySelector('.buttonOpcionesAtras')
@@ -19,8 +16,15 @@ const cruz = document.querySelector('#cruz')
 const h2res1 = document.querySelector('.h2res1')
 const h2res2 = document.querySelector('.h2res2')
 const imgres = document.querySelector('#imgres')
-
-
+const final = document.querySelector('.final')
+const audio = document.querySelector('#audio')
+audio.innerHTML=`<audio src="./sound/soundtrack.mp3" autoplay loop></audio>`
+let images = [
+    "./imgs/caracollight.png",
+    "./imgs/rabbitlight.png", 
+    "./imgs/tigerlight.png", 
+    "./imgs/cheetahlight.png"
+]
 
 // APP
 tiempo = 0
@@ -47,7 +51,6 @@ divClickAqui.onclick = () => {
     totalClicks++
     console.log(totalClicks)
     divClickAqui.innerHTML= `${totalClicks}`
-
     if (boolean == true){
         const interval = setInterval(()=>{
             tiempo++
@@ -57,10 +60,34 @@ divClickAqui.onclick = () => {
             if(tiempo == 5){
                 clearInterval(interval)
                 divStopClicks.classList.add('divStopClicks--active')
-                h2res2.innerHTML = `Realizaste ${totalClicks} clicks en 5 segundos!
-                                    (${totalClicks / 5} clicks por segundo)
-                `
-                h2res1.innerHTML = `<h2 class="h2res1">Tienes la velocidad de un Caracol</h2>`
+                if(totalClicks > 0 && totalClicks < 15){
+                    final.innerHTML=
+                    `<h2 class="h2res1">Realizaste ${totalClicks} clicks en 5 segundos!
+                    (${totalClicks / 5} clicks por segundo)</h2>
+                    <div class="imgres"><img src="${images[0]}" width="200px"></div>
+                    <h2 class="h2res2">Tienes la velocidad de un Caracol</h2>`
+                }
+                else if (totalClicks >= 15 && totalClicks < 30){
+                    final.innerHTML=
+                    `<h2 class="h2res1">Realizaste ${totalClicks} clicks en 5 segundos!
+                    (${totalClicks / 5} clicks por segundo)</h2>
+                    <div class="imgres"><img src="${images[1]}" width="200px"></div>
+                    <h2 class="h2res2">Tienes la velocidad de un Conejo</h2>`
+                }
+                else if (totalClicks >= 30 && totalClicks < 45){
+                    final.innerHTML=
+                    `<h2 class="h2res1">Realizaste ${totalClicks} clicks en 5 segundos!
+                    (${totalClicks / 5} clicks por segundo)</h2>
+                    <div class="imgres"><img src="${images[2]}" width="200px"></div>
+                    <h2 class="h2res2">Tienes la velocidad de un Tigre</h2>`
+                }
+                else if (totalClicks >= 45){
+                    final.innerHTML=
+                    `<h2 class="h2res1">Realizaste ${totalClicks} clicks en 5 segundos!
+                    (${totalClicks / 5} clicks por segundo)</h2>
+                    <div class="imgres"><img src="${images[3]}" width="200px"></div>
+                    <h2 class="h2res2">Tienes la velocidad de un Guepardo</h2>`
+                }
             }
         },1000)
         boolean = false
@@ -78,13 +105,10 @@ cruz.onclick = () => {
     divClickAqui.innerHTML= `${totalClicks}`
 }
 
-// options buttons
 const musicButtonInside = document.querySelector('.musicButtonInside')
 const darkModeButtonInside = document.querySelector('.darkModeButtonInside')
 const musicButton = document.querySelector('.musicButton')
 const darkModeButton = document.querySelector('.darkModeButton')
-const audio = document.querySelector('#audio')
-audio.innerHTML=`<audio src="./sound/soundtrack.mp3" autoplay loop></audio>`
 
 // darkmode
 const dm0 = document.querySelector('.divInicio')
@@ -97,7 +121,6 @@ const dm6 = document.querySelector('.divJuego')
 const dm7 = document.querySelector('.divClickAqui')
 const dm8 = document.querySelector('.divStopClicks')
 const dm9 = document.querySelector('.divStopClicksModal')
-
 
 musicButtonInside.onclick=()=>{
     if(musicButtonInside.classList.contains('musicButtonInside--active')){
@@ -131,6 +154,12 @@ darkModeButtonInside.onclick=()=>{
         dm7.classList.remove('divClickAqui--dm')
         dm8.classList.remove('divStopClicks--dm')
         dm9.classList.remove('divStopClicksModal--dm')
+        images = [
+            "./imgs/caracollight.png",
+            "./imgs/rabbitlight.png", 
+            "./imgs/tigerlight.png", 
+            "./imgs/cheetahlight.png"
+        ]
     }else{
         darkModeButtonInside.classList.add('musicButtonInside--active')
         darkModeButtonInside.classList.remove('musicButtonInside--active2')
@@ -148,6 +177,13 @@ darkModeButtonInside.onclick=()=>{
         dm7.classList.add('divClickAqui--dm')
         dm8.classList.add('divStopClicks--dm')
         dm9.classList.add('divStopClicksModal--dm')
+        images = [
+            "./imgs/caracoldark.png",
+            "./imgs/rabbitdark.png", 
+            "./imgs/tigerdark.png", 
+            "./imgs/cheetahdark.png"
+        ]
+
     }
 }
 
